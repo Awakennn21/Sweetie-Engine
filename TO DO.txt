@@ -1,0 +1,1 @@
+1) void OpenGLRenderer::DeduceQuadragonIndecies -> źle układa index buffer

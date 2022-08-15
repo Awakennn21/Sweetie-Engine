@@ -141,8 +141,8 @@ namespace Sweetie
 
     void OpenGLRenderer::Clear()
     {
-        glClearColor(0.9, 0.9, 0.9, 1);
-        glClear(GL_COLOR_BUFFER_BIT);
+        GLCall(glClearColor(0.9, 0.9, 0.9, 1));
+        GLCall(glClear(GL_COLOR_BUFFER_BIT));
     }
 
     bool OpenGLRenderer::RenderShape(RendererShapes Shape, float* Vertecies, float R, float G, float B, float A, std::string ShaderFilePath)

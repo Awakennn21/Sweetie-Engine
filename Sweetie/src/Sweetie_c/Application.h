@@ -5,6 +5,7 @@
 #include "Sweetie_c/Window.h"
 #include "Sweetie_c/LayerStack.h"
 #include "Sweetie_c/OpenGLRenderer.h"
+#include "Input.h"
 
 namespace Sweetie
 {

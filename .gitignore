@@ -1,0 +1,8 @@
+.vs/
+Sweetie/vendor/GLAD/GLAD.vcxproj.user
+Sweetie/vendor/GLAD/bin-int/
+Sweetie/vendor/GLAD/bin/
+Sweetie/vendor/GLFW/bin-int/
+Sweetie/vendor/GLFW/bin/
+bin-int/
+bin/

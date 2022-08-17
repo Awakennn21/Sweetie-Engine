@@ -1,0 +1,6 @@
+[submodule "Sweetie/vendor/GLM"]
+	path = Sweetie/vendor/GLM
+	url = https://github.com/g-truc/glm
+[submodule "Sweetie/vendor/ImGui"]
+	path = Sweetie/vendor/ImGui
+	url = https://github.com/ocornut/imgui

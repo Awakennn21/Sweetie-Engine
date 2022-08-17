@@ -25,8 +25,6 @@ namespace Sweetie
 		EventDispatcher Dispacher(e);
 		Dispacher.Dispatch<EventWindowClose>(BIND_EVENT_FUNCTION(Application::OnWindowClosed));
 
-		//SW_CORE_TRACE("{0}", e);
-
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
 			if (e.m_Handeled)

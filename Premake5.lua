@@ -1,5 +1,6 @@
 workspace "SweetieEngine"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -14,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Sweetie/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Sweetie/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Sweetie/vendor/ImGui"
+IncludeDir["GLM"] = "Sweetie/vendor/GLM"
 
 include "Sweetie/vendor/GLFW"
 include "Sweetie/vendor/GLAD"
@@ -33,7 +35,10 @@ project "Sweetie"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/GLM/glm/**.hpp",
+		"%{prj.name}/vendor/GLM/glm/**.inl"
+
 	}
 
 	includedirs
@@ -42,7 +47,8 @@ project "Sweetie"
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.GLM}"
 	}
 
 	links
@@ -104,7 +110,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Sweetie/vendor/spdlog-1.x/include",
-		"Sweetie/src"
+		"Sweetie/src",
+		"%{IncludeDir.GLM}"
 	}
 
 	links

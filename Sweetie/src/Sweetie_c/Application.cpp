@@ -13,6 +13,8 @@ namespace Sweetie
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FUNCTION(Application::OnEvent));
 		s_AppInstance = this;
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Sweetie::Application::~Application()
@@ -44,6 +46,14 @@ namespace Sweetie
 			{
 				layer->OnUpdate();
 			}
+
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnImGuiRender();
+			}
+			m_ImGuiLayer->End();
+
 		}
 	}
 	void Application::PushLayer(Layer* layer)

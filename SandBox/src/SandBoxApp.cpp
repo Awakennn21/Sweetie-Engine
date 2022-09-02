@@ -32,7 +32,7 @@ class RenderLayer : public Sweetie::Layer
 	{
 		if (e.GetKeyCode() != SW_KEY_J)
 		{
-			SW_TRACE("{0}", (char)e.GetKeyCode());
+			//SW_TRACE("{0}", (char)e.GetKeyCode());
 		}
 		return true;
 	}
@@ -45,7 +45,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new RenderLayer);
-		PushOverlay(new Sweetie::ImGuiLayer());
 	}
 	~Sandbox()
 	{

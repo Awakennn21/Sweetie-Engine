@@ -1,11 +1,21 @@
 #pragma once
 
-//Exporting dll on engine side but importing dll on client side
+////Exporting dll on engine side but importing dll on client side
+//#ifdef SW_PLATFORM_WINDOWS
+//	#ifdef SW_BUILD_DLL
+//		#define SW_API __declspec(dllexport)
+//	#else
+//		#define SW_API __declspec(dllimport)
+//	#endif 
+//#else
+//#error OnlyWindowsSupported!
+//#endif
+
 #ifdef SW_PLATFORM_WINDOWS
 	#ifdef SW_BUILD_DLL
-		#define SW_API __declspec(dllexport)
+		#define SW_API 
 	#else
-		#define SW_API __declspec(dllimport)
+		#define SW_API 
 	#endif 
 #else
 #error OnlyWindowsSupported!

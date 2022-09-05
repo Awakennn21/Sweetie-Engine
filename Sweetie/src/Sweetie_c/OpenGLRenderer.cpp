@@ -141,7 +141,7 @@ namespace Sweetie
 
     void OpenGLRenderer::Clear()
     {
-        GLCall(glClearColor(0.9, 0.9, 0.9, 1));
+        GLCall(glClearColor(0.9f, 0.9f, 0.9f, 1.f));
         GLCall(glClear(GL_COLOR_BUFFER_BIT));
     }
 

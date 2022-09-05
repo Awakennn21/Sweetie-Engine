@@ -23,8 +23,10 @@ include "Sweetie/vendor/ImGui"
 
 project "Sweetie"
 	location "Sweetie"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++20"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -47,7 +49,8 @@ project "Sweetie"
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.ImGui}",              
+		"%{IncludeDir.ImGui}/backends",              
 		"%{IncludeDir.GLM}"
 	}
 
@@ -60,43 +63,39 @@ project "Sweetie"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "off"
 		systemversion "latest"
 
 		defines
 		{
+			"_CRT_SECURE_NO_WARNINGS",
 			"SW_PLATFORM_WINDOWS",
-			"SW_BUILD_DLL",
 			"GLFW_INCLUDE_NONE",
 			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM",
 			"SW_ENABLE_ASSERTS"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
-
 	filter "configurations:Debug"
 		defines "SW_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "SW_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "SW_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++20"
+	staticruntime "on"
+
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -120,8 +119,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "off"
 		systemversion "latest"
 
 		defines

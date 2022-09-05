@@ -10,8 +10,8 @@ namespace Sweetie
 		float m_MouseX, m_MouseY;
 
 	public:
-		inline int GetMouseX() const { return m_MouseX; }
-		inline int GetMouseY() const { return m_MouseY; }
+		inline float GetMouseX() const { return m_MouseX; }
+		inline float GetMouseY() const { return m_MouseY; }
 		
 		std::string LogEvent() const override
 		{
@@ -25,7 +25,7 @@ namespace Sweetie
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput);
 
 	public:
-		EventMouseMoved(int X, int Y)
+		EventMouseMoved(float X, float  Y)
 			:m_MouseX(X), m_MouseY(Y) {}
 
 	};

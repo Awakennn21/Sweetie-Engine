@@ -12,11 +12,7 @@
 //#endif
 
 #ifdef SW_PLATFORM_WINDOWS
-	#ifdef SW_BUILD_DLL
-		#define SW_API 
-	#else
-		#define SW_API 
-	#endif 
+#define SW_API 
 #else
 #error OnlyWindowsSupported!
 #endif

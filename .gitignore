@@ -6,3 +6,7 @@ Sweetie/vendor/GLFW/bin-int/
 Sweetie/vendor/GLFW/bin/
 bin-int/
 bin/
+.sln
+.vcxproj
+.vcxproj.filters
+.vcxproj.user

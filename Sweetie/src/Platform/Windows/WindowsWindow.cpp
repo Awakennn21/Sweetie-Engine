@@ -3,8 +3,8 @@
 #include "Sweetie_c/Events/KeyboardEvent.h"
 #include "Sweetie_c/Events/WindowEvents.h"
 #include "Sweetie_c/Events/MouseEvent.h"
+#include "Platform/OpenGl/OpenGlContext.h"
 
-#include <glad/glad.h>
 
 namespace Sweetie
 {
@@ -29,15 +29,12 @@ namespace Sweetie
 			//glfwSetErrorCallback(GLFWErrorCallback);
 			GLFWInitialized = true;
 		}
-
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
+		m_Context = new OpenGlContext(m_Window);
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
-
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		SW_CORE_ASSERT(status, "Failed to initialize GLAD");
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -122,7 +119,7 @@ namespace Sweetie
 	void Sweetie::WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 	}
 
 	void Sweetie::WindowsWindow::SetVSync(bool enabled)

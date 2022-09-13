@@ -44,7 +44,7 @@ class  Sandbox : public Sweetie::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new RenderLayer);
+		//PushLayer(new RenderLayer);
 	}
 	~Sandbox()
 	{

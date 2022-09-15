@@ -112,7 +112,7 @@ namespace Sweetie
         GLCall(glDeleteProgram(ProgramID));
 	}
 
-	void OpenGlShader::Bind()
+	void OpenGlShader::Bind() const 
 	{
         GLCall(glUseProgram(ProgramID));
 	}

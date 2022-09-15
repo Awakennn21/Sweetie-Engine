@@ -3,6 +3,10 @@
 #include "Application.h"
 #include "Log.h"
 
+
+#include "glad/glad.h"
+
+
 namespace Sweetie
 {
 	Application* Application::s_AppInstance = nullptr;
@@ -15,6 +19,30 @@ namespace Sweetie
 		s_AppInstance = this;
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
+
+		glCreateVertexArrays(1, &vao);
+		glBindVertexArray(vao);
+
+		float tab[6] =
+		{
+			-0.5f,-0.5f,
+			-0.5f,0.5f,
+			0.5f,-0.5f
+		};
+		uint32_t Index[3] =
+		{
+			0,1,2
+		};
+
+		VB.reset(VertexBuffer::Create(tab, sizeof(tab)));
+		VB->Bind();
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, false, 2 * sizeof(float), 0);
+		IB.reset(IndexBuffer::Create(Index, 3));
+		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
+		VB->Bind();
+		IB->Bind();
+		S->Bind();
 	}
 
 	Sweetie::Application::~Application()
@@ -38,7 +66,7 @@ namespace Sweetie
 	}
 
 	void Application::Run()
-	{
+	{	
 		while (m_Running)
 		{
 			m_Window->OnUpdate();
@@ -53,7 +81,6 @@ namespace Sweetie
 				layer->OnImGuiRender();
 			}
 			m_ImGuiLayer->End();
-
 		}
 	}
 	void Application::PushLayer(Layer* layer)

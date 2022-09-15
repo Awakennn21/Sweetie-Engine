@@ -84,7 +84,7 @@ project "Sweetie"
 		runtime "Release"
 		optimize "on"
 
-	filter "configurations:Dist"
+	filter "configurations:Diste"
 		defines "SW_DIST"
 		runtime "Release"
 		optimize "on"

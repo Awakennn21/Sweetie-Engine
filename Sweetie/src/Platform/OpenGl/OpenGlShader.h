@@ -1,6 +1,5 @@
 #pragma once
-#include "Sweetie_c/Core.h"
-#include <string>
+#include "Platform/Rendering/Shader.h"
 namespace Sweetie
 {
 	struct VFShaders
@@ -9,7 +8,7 @@ namespace Sweetie
 		std::string Fragment;
 	};
 
-	class OpenGlShader
+	class OpenGlShader : public Shader
 	{
 	private:
 		unsigned int ProgramID;
@@ -24,7 +23,7 @@ namespace Sweetie
 		OpenGlShader(const std::string& ShaderFile);
 		~OpenGlShader();
 
-		void Bind();
+		virtual void Bind() const override;
 	};
 }
 

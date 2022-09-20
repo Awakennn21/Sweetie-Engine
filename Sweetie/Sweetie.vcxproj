@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h" />
@@ -583,6 +584,7 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp" />

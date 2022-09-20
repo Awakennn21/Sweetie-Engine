@@ -3,60 +3,55 @@
 
 #include "../../Sweetie/src/Platform/Rendering/Buffers.h"
 #include "../../Sweetie/src/Platform/Rendering/Shader.h"
+#include "../../Sweetie/src/Platform/OpenGl/OpenGlVertexArray.h"
 #include "../../Sweetie/src/Platform/OpenGl/OpenGlBuffers.cpp"
 #include <glad/glad.h>
 
 using namespace Sweetie;
 class RenderLayer : public Sweetie::Layer
 {
-	float tab[6] =
+	float tab[9] =
 	{
-		-0.5f,-0.5f,
-		-0.5f,0.5f,
-		0.5f,-0.5f
+		-0.5f,-0.5f, 0.00f,
+		0.0f,0.5f, 0.0f,
+		0.5f,-0.5f, 0.00f
 	};
 	uint32_t Index[3] =
 	{
 		0,1,2
 	};
-	std::unique_ptr<VertexBuffer> VB;
-	std::unique_ptr<IndexBuffer> IB;
-	std::unique_ptr<Shader> S;
+	std::shared_ptr<OpenGlVertexArray> VAO;
+	std::shared_ptr<VertexBuffer> VB;
+	std::shared_ptr<IndexBuffer> IB;
+	std::shared_ptr<Shader> S;
 	unsigned int vao;
 
 
 public:
 	RenderLayer()
 	{
-		glCreateVertexArrays(1, &vao);
-		glBindVertexArray(vao);
+		VAO.reset(OpenGlVertexArray::Create());
+		VAO->Bind();
+
+
 		VB.reset(VertexBuffer::Create(tab, sizeof(tab)));
 		VB->Bind();
 		BufferLayout Layout =
 		{
-			{BufferElementType::Float2,"Positon"}
-		};
+			{BufferElementType::Float3,"Positon"}
+		}; 
+		VB->SetLayout(Layout);	
+		VAO->AddVertexBuffer(VB);
+		
 
-		uint32_t index = 0;
-		for (const auto& element : Layout)
-		{
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer
-			(
-				index,
-				element.GetComponentCount(),
-				BufferElementTypeToOpenGLType(element.m_Type),
-				element.mb_ToNormalize ? GL_TRUE : GL_FALSE,
-				Layout.GetStride(),
-				(const void*)element.m_Offset
-			);
-			index++;
-		}
 		IB.reset(IndexBuffer::Create(Index, 3));
-		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
-		VB->Bind();
 		IB->Bind();
+		VAO->SetIndexBuffer(IB);
+
+
+		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
 		S->Bind();
+
 	}
 
 	void OnUpdate()

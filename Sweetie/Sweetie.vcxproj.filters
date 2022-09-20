@@ -1371,6 +1371,7 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp">
       <Filter>vendor\GLM\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">
@@ -1415,5 +1416,6 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
   </ItemGroup>
 </Project>

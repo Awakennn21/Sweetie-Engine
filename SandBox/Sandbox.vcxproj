@@ -131,7 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\SandBoxApp.cpp" />
+    <ClCompile Include="src\TestApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sweetie\Sweetie.vcxproj">

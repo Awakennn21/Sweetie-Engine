@@ -109,6 +109,8 @@ namespace Sweetie
 		inline uint32_t GetStride() const { return m_Stride; }
 		std::vector<BufferElement>::iterator begin() { return m_Layout.begin(); }
 		std::vector<BufferElement>::iterator end() { return m_Layout.end(); }
+		std::vector<BufferElement>::const_iterator begin() const { return m_Layout.begin(); }
+		std::vector<BufferElement>::const_iterator end() const { return m_Layout.end(); }
 	private:
 		void CalculateOffsetAndStride()
 		{

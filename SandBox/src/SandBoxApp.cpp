@@ -1,19 +1,69 @@
 #pragma once
 #include <Sweetie.h>
 
+#include "../../Sweetie/src/Platform/Rendering/Buffers.h"
+#include "../../Sweetie/src/Platform/Rendering/Shader.h"
+#include "../../Sweetie/src/Platform/OpenGl/OpenGlBuffers.cpp"
+#include <glad/glad.h>
+
+using namespace Sweetie;
 class RenderLayer : public Sweetie::Layer
 {
-	Sweetie::OpenGLRenderer Renderer;
 	float tab[6] =
 	{
-		-0.1f,-0.5f,
-		0.8f,0.3f,
-		0.9f,0.2f
+		-0.5f,-0.5f,
+		-0.5f,0.5f,
+		0.5f,-0.5f
 	};
+	uint32_t Index[3] =
+	{
+		0,1,2
+	};
+	std::unique_ptr<VertexBuffer> VB;
+	std::unique_ptr<IndexBuffer> IB;
+	std::unique_ptr<Shader> S;
+	unsigned int vao;
+
+
+public:
+	RenderLayer()
+	{
+		glCreateVertexArrays(1, &vao);
+		glBindVertexArray(vao);
+		VB.reset(VertexBuffer::Create(tab, sizeof(tab)));
+		VB->Bind();
+		BufferLayout Layout =
+		{
+			{BufferElementType::Float2,"Positon"}
+		};
+
+		uint32_t index = 0;
+		for (const auto& element : Layout)
+		{
+			glEnableVertexAttribArray(index);
+			glVertexAttribPointer
+			(
+				index,
+				element.GetComponentCount(),
+				BufferElementTypeToOpenGLType(element.m_Type),
+				element.mb_ToNormalize ? GL_TRUE : GL_FALSE,
+				Layout.GetStride(),
+				(const void*)element.m_Offset
+			);
+			index++;
+		}
+		IB.reset(IndexBuffer::Create(Index, 3));
+		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
+		VB->Bind();
+		IB->Bind();
+		S->Bind();
+	}
+
 	void OnUpdate()
 	{
-		Renderer.Clear();
-		Renderer.RenderShape(Sweetie::RendererShapes::RS_Triangle, tab, 0.4f, 0.0f, 0.0f);
+		glClearColor(0.9f, 0.9f, 0.9f, 1.f);
+		glClear(GL_COLOR_BUFFER_BIT);
+		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);
 	}
 	void OnEvent(Sweetie::Event& e)
 	{
@@ -23,36 +73,26 @@ class RenderLayer : public Sweetie::Layer
 	}
 	bool OnMouseMoved(Sweetie::EventMouseMoved& e)
 	{
-		SW_INFO("{0}", e.GetMouseY());
-		tab[4] = ((float)(e.GetMouseX()) / (1920.f / 2.f)) - 1.0f;
-		tab[5] = (((float)(e.GetMouseY()) / (1080.f / 2.f)) - 1.0f) * -1.f;
 		return true;
 	}
 	bool OnKeyPressed(Sweetie::EventKeyPressed& e)
 	{
-		if (e.GetKeyCode() != SW_KEY_J)
-		{
-			SW_TRACE("{0}", (char)e.GetKeyCode());
-		}
 		return true;
 	}
 };
 
-class  Sandbox : public Sweetie::Application
+class  Test : public Sweetie::Application
 {
 
 public:
-	Sandbox()
+	Test()
+		:Application()
 	{
-		PushLayer(new RenderLayer);
-	}
-	~Sandbox()
-	{
-
+		PushLayer(new RenderLayer());
 	}
 };
 
 Sweetie::Application* Sweetie::CreateApplication()
 {
-	return new Sandbox;
+	return new Test;
 }

@@ -2,9 +2,28 @@
 #include "OpenGlBuffers.h"
 #include "Sweetie_c/Log.h"
 #include <glad/glad.h>
-
+	
 namespace Sweetie
 {
+	static GLenum BufferElementTypeToOpenGLType(BufferElementType type)
+	{
+		switch (type)
+		{
+		case Sweetie::BufferElementType::None:		return GL_FLOAT;
+		case Sweetie::BufferElementType::Float:		return GL_FLOAT;
+		case Sweetie::BufferElementType::Float2:	return GL_FLOAT;
+		case Sweetie::BufferElementType::Float3:	return GL_FLOAT;
+		case Sweetie::BufferElementType::Float4:	return GL_FLOAT;
+		case Sweetie::BufferElementType::Int:		return GL_INT;
+		case Sweetie::BufferElementType::Int2:		return GL_INT;
+		case Sweetie::BufferElementType::Int3:		return GL_INT;
+		case Sweetie::BufferElementType::Int4:		return GL_INT;
+		case Sweetie::BufferElementType::Mat3:		return GL_FLOAT;
+		case Sweetie::BufferElementType::Mat4:		return GL_FLOAT;
+		case Sweetie::BufferElementType::Bool:		return GL_BOOL;
+		}
+	}
+
 	OpenGlVertexBuffer::OpenGlVertexBuffer(float* Vertecies, uint32_t size)
 	{
 		glCreateBuffers(1, &BufferId);

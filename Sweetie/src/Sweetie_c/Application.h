@@ -8,10 +8,6 @@
 #include "Sweetie_c/OpenGLRenderer.h"
 #include "Input.h"
 
-//////tmp////
-#include "Platform/Rendering/Buffers.h"
-#include "Platform/Rendering/Shader.h"
-/// ///////// 
 namespace Sweetie
 {
 	class SW_API Application
@@ -23,12 +19,6 @@ namespace Sweetie
 		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 		bool m_Running;
-		/////////////Temporary for debbugging /////////////////////////
-		std::unique_ptr<VertexBuffer> VB;
-		std::unique_ptr<IndexBuffer> IB;
-		std::unique_ptr<Shader> S;
-		unsigned int vao;
-		///////////////////////////////////////////////////////////////
 	public:
 
 	private:

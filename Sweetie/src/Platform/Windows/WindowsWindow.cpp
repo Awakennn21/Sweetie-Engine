@@ -26,7 +26,6 @@ namespace Sweetie
 		{
 			int success = glfwInit();
 			SW_CORE_ASSERT(success, "Could Not Initialize GLFW");
-			//glfwSetErrorCallback(GLFWErrorCallback);
 			GLFWInitialized = true;
 		}
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);

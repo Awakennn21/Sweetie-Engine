@@ -1,3 +1,7 @@
+.sln
+.vcxproj
+.vcxproj.filters
+.vcxproj.user
 .vs/
 Sweetie/vendor/GLAD/GLAD.vcxproj.user
 Sweetie/vendor/GLAD/bin-int/
@@ -6,7 +10,3 @@ Sweetie/vendor/GLFW/bin-int/
 Sweetie/vendor/GLFW/bin/
 bin-int/
 bin/
-.sln
-.vcxproj
-.vcxproj.filters
-.vcxproj.user

@@ -5,13 +5,18 @@
 
 namespace Sweetie
 {
+
 	class OpenGlVertexBuffer : public VertexBuffer
 	{
 	private:
 		unsigned int BufferId;
+		BufferLayout m_Layout;
 	public:
 		OpenGlVertexBuffer(float* Vertecies, uint32_t size);
 		~OpenGlVertexBuffer();
+
+		virtual const BufferLayout& GetLayout() const override { return m_Layout; };
+		virtual void SetLayout(const BufferLayout& layout) override { m_Layout = layout; };
 
 		virtual void Bind() const override;
 		virtual void UnBind() const override;

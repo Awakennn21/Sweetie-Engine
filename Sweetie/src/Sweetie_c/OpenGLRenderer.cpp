@@ -81,7 +81,7 @@ namespace Sweetie
         GLCall(glGenBuffers(1, &IndexBuffer));
         GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IndexBuffer));
         GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * 2 * (int)Shape * sizeof(int), Buffer, GL_STATIC_DRAW));
-
+        delete [] Buffer;
         return IndexBuffer;
 
     }

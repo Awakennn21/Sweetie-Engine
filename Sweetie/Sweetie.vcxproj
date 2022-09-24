@@ -140,6 +140,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h" />
+    <ClInclude Include="src\Platform\Rendering\RenderCommand.h" />
+    <ClInclude Include="src\Platform\Rendering\Renderer.h" />
+    <ClInclude Include="src\Platform\Rendering\RendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h" />
@@ -147,6 +151,7 @@
     <ClInclude Include="src\Platform\Rendering\Buffers.h" />
     <ClInclude Include="src\Platform\Rendering\GraphicsContext.h" />
     <ClInclude Include="src\Platform\Rendering\Shader.h" />
+    <ClInclude Include="src\Platform\Rendering\VertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Sweetie.h" />
@@ -584,13 +589,18 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp" />
     <ClCompile Include="src\Platform\OpenGl\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platform\Rendering\Buffers.cpp" />
+    <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp" />
     <ClCompile Include="src\Platform\Rendering\Shader.cpp" />
+    <ClCompile Include="src\Platform\Rendering\VertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Sweetie_c\Application.cpp" />

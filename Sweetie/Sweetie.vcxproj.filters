@@ -1372,6 +1372,11 @@
       <Filter>vendor\GLM\glm</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
+    <ClInclude Include="src\Platform\Rendering\RendererAPI.h" />
+    <ClInclude Include="src\Platform\Rendering\VertexArray.h" />
+    <ClInclude Include="src\Platform\Rendering\Renderer.h" />
+    <ClInclude Include="src\Platform\Rendering\RenderCommand.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">
@@ -1417,5 +1422,10 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
+    <ClCompile Include="src\Platform\Rendering\VertexArray.cpp" />
+    <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
   </ItemGroup>
 </Project>

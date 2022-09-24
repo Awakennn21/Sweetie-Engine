@@ -1,44 +1,43 @@
 #pragma once
 #include <Sweetie.h>
-
+#include <Windows.h>
 #include "../../Sweetie/src/Platform/Rendering/Buffers.h"
 #include "../../Sweetie/src/Platform/Rendering/Shader.h"
-#include "../../Sweetie/src/Platform/OpenGl/OpenGlVertexArray.h"
+#include "../../Sweetie/src/Platform/Rendering/VertexArray.h"
 #include "../../Sweetie/src/Platform/OpenGl/OpenGlBuffers.cpp"
-#include <glad/glad.h>
+#include "../../Sweetie/src/Platform/Rendering/Renderer.h"
 
 using namespace Sweetie;
 class RenderLayer : public Sweetie::Layer
 {
-	float tab[9] =
+	float tab[12] =
 	{
-		-0.5f,-0.5f, 0.00f,
-		0.0f,0.5f, 0.0f,
-		0.5f,-0.5f, 0.00f
+		0.0f, 0.7f, 0.0f, 8.4f,
+		-0.7f,-0.7f, 0.0f, 5.f,
+		0.7f,-0.7f, 0+.0f, 9.3f
 	};
 	uint32_t Index[3] =
 	{
 		0,1,2
 	};
-	std::shared_ptr<OpenGlVertexArray> VAO;
+	std::shared_ptr<VertexArray> VAO;
 	std::shared_ptr<VertexBuffer> VB;
 	std::shared_ptr<IndexBuffer> IB;
 	std::shared_ptr<Shader> S;
-	unsigned int vao;
-
+	
 
 public:
 	RenderLayer()
 	{
-		VAO.reset(OpenGlVertexArray::Create());
+		VAO.reset(VertexArray::Create());
 		VAO->Bind();
-
 
 		VB.reset(VertexBuffer::Create(tab, sizeof(tab)));
 		VB->Bind();
 		BufferLayout Layout =
 		{
-			{BufferElementType::Float3,"Positon"}
+			{BufferElementType::Float3,"Positon"},
+			{BufferElementType::Float,"Random"}
 		}; 
 		VB->SetLayout(Layout);	
 		VAO->AddVertexBuffer(VB);
@@ -51,27 +50,40 @@ public:
 
 		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
 		S->Bind();
-
 	}
 
 	void OnUpdate()
 	{
-		glClearColor(0.9f, 0.9f, 0.9f, 1.f);
-		glClear(GL_COLOR_BUFFER_BIT);
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);
+		RenderCommand::Clear({ 0.8f,0.8f,0.8f,0.8f });
+
+
+		Renderer::BeginScene();
+		{
+			S->Bind();
+			Renderer::Submit(VAO);
+		}
+		Renderer::EndScene();
+
 	}
 	void OnEvent(Sweetie::Event& e)
 	{
 		Sweetie::EventDispatcher d(e);
 		d.Dispatch<Sweetie::EventMouseMoved>(BIND_EVENT_FUNCTION(RenderLayer::OnMouseMoved));
-		d.Dispatch<Sweetie::EventKeyPressed>(BIND_EVENT_FUNCTION(RenderLayer::OnKeyPressed));
+		d.Dispatch<Sweetie::EventMouseButtonPressed>(BIND_EVENT_FUNCTION(RenderLayer::OnMouseButtonPressed));
 	}
 	bool OnMouseMoved(Sweetie::EventMouseMoved& e)
 	{
 		return true;
 	}
-	bool OnKeyPressed(Sweetie::EventKeyPressed& e)
+	bool OnMouseButtonPressed(Sweetie::EventMouseButtonPressed& e)
 	{
+		WindowsInput i;
+		if (e.GetButtonCode() == SW_MOUSE_BUTTON_LEFT)
+		{
+			POINT p;
+			GetCursorPos(&p);
+			SW_INFO("{0} , {1}", p.x, p.y);
+		}
 		return true;
 	}
 };

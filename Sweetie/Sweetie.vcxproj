@@ -120,36 +120,30 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;SW_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\ImGui;vendor\ImGui\backends;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <Optimization>Full</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <StringPooling>true</StringPooling>
+      <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
+    <ClInclude Include="src\Platform\Rendering\Buffers.h" />
+    <ClInclude Include="src\Platform\Rendering\GraphicsContext.h" />
     <ClInclude Include="src\Platform\Rendering\RenderCommand.h" />
     <ClInclude Include="src\Platform\Rendering\Renderer.h" />
     <ClInclude Include="src\Platform\Rendering\RendererAPI.h" />
-    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
-    <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h" />
-    <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h" />
-    <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h" />
-    <ClInclude Include="src\Platform\Rendering\Buffers.h" />
-    <ClInclude Include="src\Platform\Rendering\GraphicsContext.h" />
     <ClInclude Include="src\Platform\Rendering\Shader.h" />
     <ClInclude Include="src\Platform\Rendering\VertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -589,11 +583,11 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
-    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGl\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platform\Rendering\Buffers.cpp" />
     <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp" />

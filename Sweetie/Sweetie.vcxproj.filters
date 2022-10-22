@@ -54,7 +54,13 @@
     <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h">
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h">
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Rendering\Buffers.h">
@@ -63,7 +69,19 @@
     <ClInclude Include="src\Platform\Rendering\GraphicsContext.h">
       <Filter>src\Platform\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\RenderCommand.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\Renderer.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\RendererAPI.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Rendering\Shader.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\VertexArray.h">
       <Filter>src\Platform\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
@@ -1371,12 +1389,6 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp">
       <Filter>vendor\GLM\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
-    <ClInclude Include="src\Platform\Rendering\RendererAPI.h" />
-    <ClInclude Include="src\Platform\Rendering\VertexArray.h" />
-    <ClInclude Include="src\Platform\Rendering\Renderer.h" />
-    <ClInclude Include="src\Platform\Rendering\RenderCommand.h" />
-    <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">
@@ -1385,7 +1397,13 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\imgui_impl_glfw.cpp">
@@ -1394,7 +1412,19 @@
     <ClCompile Include="src\Platform\Rendering\Buffers.cpp">
       <Filter>src\Platform\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\Renderer.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Rendering\Shader.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\VertexArray.cpp">
       <Filter>src\Platform\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -1421,11 +1451,5 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
-    <ClCompile Include="src\Platform\Rendering\VertexArray.cpp" />
-    <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp" />
-    <ClCompile Include="src\Platform\Rendering\Renderer.cpp" />
-    <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp" />
-    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
   </ItemGroup>
 </Project>

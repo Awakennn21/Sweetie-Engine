@@ -12,6 +12,8 @@ namespace Sweetie
 		static void EndScene();
 
 		static void Submit(const std::shared_ptr<VertexArray>& vertexArray);
+		static void EnableCulling();
+		static void DisableCulling();
 
 	};
 }

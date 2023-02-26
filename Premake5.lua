@@ -14,12 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Sweetie/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Sweetie/vendor/GLAD/include"
-IncludeDir["ImGui"] = "Sweetie/vendor/ImGui"
 IncludeDir["GLM"] = "Sweetie/vendor/GLM"
 
 include "Sweetie/vendor/GLFW"
 include "Sweetie/vendor/GLAD"
-include "Sweetie/vendor/ImGui"
 
 project "Sweetie"
 	location "Sweetie"
@@ -48,9 +46,7 @@ project "Sweetie"
 		"%{prj.name}/vendor/spdlog-1.x/include",
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}",              
-		"%{IncludeDir.ImGui}/backends",              
+		"%{IncludeDir.GLAD}",             
 		"%{IncludeDir.GLM}"
 	}
 
@@ -58,7 +54,6 @@ project "Sweetie"
 	{
 		"GLFW",
 		"GLAD",
-		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -71,7 +66,8 @@ project "Sweetie"
 			"SW_PLATFORM_WINDOWS",
 			"GLFW_INCLUDE_NONE",
 			"IMGUI_IMPL_OPENGL_LOADER_CUSTOM",
-			"SW_ENABLE_ASSERTS"
+			"SW_ENABLE_ASSERTS",
+			"OPENGL_RENDERING_API"
 		}
 
 	filter "configurations:Debug"

@@ -22,9 +22,6 @@
     <Filter Include="src\Sweetie_c\Events">
       <UniqueIdentifier>{F8290E8E-E4B8-9757-8DD7-AB527945A8FD}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Sweetie_c\ImGui">
-      <UniqueIdentifier>{BE80BFBE-2AE2-9CCC-B34F-E37E1FB0D38B}</UniqueIdentifier>
-    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -51,6 +48,9 @@
     <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h">
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlCamera.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h">
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
@@ -64,6 +64,9 @@
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Rendering\Buffers.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\Camera.h">
       <Filter>src\Platform\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Rendering\GraphicsContext.h">
@@ -114,12 +117,6 @@
     <ClInclude Include="src\Sweetie_c\Events\WindowEvents.h">
       <Filter>src\Sweetie_c\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Sweetie_c\ImGui\ImGuiBuild.h">
-      <Filter>src\Sweetie_c\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Sweetie_c\ImGui\ImGuiLLayer.h">
-      <Filter>src\Sweetie_c\ImGui</Filter>
-    </ClInclude>
     <ClInclude Include="src\Sweetie_c\Input.h">
       <Filter>src\Sweetie_c</Filter>
     </ClInclude>
@@ -133,9 +130,6 @@
       <Filter>src\Sweetie_c</Filter>
     </ClInclude>
     <ClInclude Include="src\Sweetie_c\Log.h">
-      <Filter>src\Sweetie_c</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Sweetie_c\OpenGLRenderer.h">
       <Filter>src\Sweetie_c</Filter>
     </ClInclude>
     <ClInclude Include="src\Sweetie_c\Window.h">
@@ -1394,6 +1388,9 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlCamera.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
@@ -1406,10 +1403,10 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGl\imgui_impl_glfw.cpp">
-      <Filter>src\Platform\OpenGl</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Rendering\Buffers.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\Camera.cpp">
       <Filter>src\Platform\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp">
@@ -1436,16 +1433,10 @@
     <ClCompile Include="src\Sweetie_c\Application.cpp">
       <Filter>src\Sweetie_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\Sweetie_c\ImGui\ImGuiLLayer.cpp">
-      <Filter>src\Sweetie_c\ImGui</Filter>
-    </ClCompile>
     <ClCompile Include="src\Sweetie_c\LayerStack.cpp">
       <Filter>src\Sweetie_c</Filter>
     </ClCompile>
     <ClCompile Include="src\Sweetie_c\Log.cpp">
-      <Filter>src\Sweetie_c</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Sweetie_c\OpenGLRenderer.cpp">
       <Filter>src\Sweetie_c</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp">

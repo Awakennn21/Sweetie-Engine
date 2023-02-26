@@ -20,4 +20,15 @@ namespace Sweetie
 		vertexArray->Bind();
 		glDrawElements(GL_TRIANGLES, vertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 	}
+
+	void OpenGlRendererAPI::EnableCulling()
+	{
+		glEnable(GL_CULL_FACE);
+	}
+
+	void OpenGlRendererAPI::DisableCulling()
+	{
+		glDisable(GL_CULL_FACE);
+	}
+
 }

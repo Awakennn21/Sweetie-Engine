@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "Sweetie_c/Core.h"
 #include "Sweetie_c/Log.h"
+
 namespace Sweetie
 {
 	enum class BufferElementType : uint8_t

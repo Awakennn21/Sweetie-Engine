@@ -1,6 +1,8 @@
 #pragma once
 #include "pch.h"
 #include "Platform/Rendering/VertexArray.h"
+#include "Platform/Rendering/Shader.h"
+#include "Platform/Rendering/Camera.h"
 #include <glm/glm.hpp>
 
 namespace Sweetie
@@ -20,6 +22,8 @@ namespace Sweetie
 		virtual void Clear() = 0;
 		virtual void Clear(glm::vec4 Color) = 0;
 		virtual void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray) = 0;
+		virtual void EnableCulling() = 0;
+		virtual void DisableCulling() = 0;
 
 	};
 

@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "OpenGlBuffers.h"
 #include "Sweetie_c/Log.h"
-
 #include <glad/glad.h>
 
 namespace Sweetie
@@ -52,4 +51,3 @@ namespace Sweetie
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
 }
-

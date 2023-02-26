@@ -22,5 +22,13 @@ namespace Sweetie
 		{
 			s_RendererAPI->DrawIndexed(vertexArray);
 		}
+		inline static void EnableCulling()
+		{
+			s_RendererAPI->EnableCulling();
+		}
+		inline static void DisableCulling()
+		{
+			s_RendererAPI->DisableCulling();
+		}
 	};
 }

@@ -4,6 +4,10 @@
 
 #include <glad/glad.h>
 
+#include <glm/gtx/transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/mat4x4.hpp>
+
 namespace Sweetie
 {
 
@@ -21,7 +25,7 @@ namespace Sweetie
     {
         if (GLenum error = glGetError())
         {
-            SW_CORE_ERROR("[OPEN_GL_ERROR] (", error, ")");
+            SW_CORE_ERROR("[OPEN_GL_ERROR] {0}", error);
             return false;
         }
         return true;
@@ -94,14 +98,14 @@ namespace Sweetie
 	OpenGlShader::OpenGlShader(const std::string& ShaderFile)
 	{
         VFShaders Shaders = ParseShaders(ShaderFile);
-        ProgramID = glCreateProgram();
+        m_ProgramID = glCreateProgram();
         unsigned int vs = CompileShader(GL_VERTEX_SHADER, Shaders.Vertex);
         unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, Shaders.Fragment);
 
-        GLCall(glAttachShader(ProgramID, vs));
-        GLCall(glAttachShader(ProgramID, fs));
-        GLCall(glLinkProgram(ProgramID));
-        GLCall(glValidateProgram(ProgramID));
+        GLCall(glAttachShader(m_ProgramID, vs));
+        GLCall(glAttachShader(m_ProgramID, fs));
+        GLCall(glLinkProgram(m_ProgramID));
+        GLCall(glValidateProgram(m_ProgramID));
 
         GLCall(glDeleteShader(vs));
         GLCall(glDeleteShader(fs));
@@ -109,11 +113,31 @@ namespace Sweetie
 
 	OpenGlShader::~OpenGlShader()
 	{
-        GLCall(glDeleteProgram(ProgramID));
+        GLCall(glDeleteProgram(m_ProgramID));
 	}
 
 	void OpenGlShader::Bind() const 
 	{
-        GLCall(glUseProgram(ProgramID));
+        GLCall(glUseProgram(m_ProgramID));
 	}
+    void OpenGlShader::SendData1F(const char* uniformName, glm::vec1 data) const
+    {
+        glUniform1f(glGetUniformLocation(m_ProgramID, uniformName), data.x);
+    }
+    void OpenGlShader::SendData2F(const char* uniformName,glm::vec2 data) const
+    {
+        glUniform2f(glGetUniformLocation(m_ProgramID, uniformName), data.x, data.y);
+    }
+    void OpenGlShader::SendData3F(const char* uniformName, glm::vec3 data) const
+    {
+        glUniform3f(glGetUniformLocation(m_ProgramID, uniformName), data.x, data.y, data.z);
+    }
+    void OpenGlShader::SendData4F(const char* uniformName, glm::vec4 data) const
+    {
+        glUniform4f(glGetUniformLocation(m_ProgramID, uniformName), data.x, data.y, data.z, data.w);
+    }
+    void OpenGlShader::SendDataMat4f(const char* uniformName,glm::mat4 data) const
+    {
+        glUniformMatrix4fv(glGetUniformLocation(m_ProgramID, uniformName), 1, GL_FALSE, glm::value_ptr(data));
+    }
 }

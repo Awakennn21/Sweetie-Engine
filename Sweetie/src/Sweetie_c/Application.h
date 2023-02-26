@@ -2,10 +2,10 @@
 #include "Core.h"
 #include "Events/Event.h"
 #include "Events/WindowEvents.h"
+#include "Events/MouseEvent.h"
+#include "Events/KeyboardEvent.h"
 #include "Sweetie_c/Window.h"
 #include "Sweetie_c/LayerStack.h"
-#include "ImGui/ImGuiLLayer.h"
-#include "Sweetie_c/OpenGLRenderer.h"
 #include "Input.h"
 
 namespace Sweetie
@@ -16,7 +16,6 @@ namespace Sweetie
 		static Application* s_AppInstance;
 		
 		std::unique_ptr<Window> m_Window;
-		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 		bool m_Running;
 	public:

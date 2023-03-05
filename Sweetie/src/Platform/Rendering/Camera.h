@@ -17,7 +17,6 @@ namespace Sweetie
 	public:
 		virtual ~Camera() {};
 		virtual glm::vec3 GetCameraPosition() const = 0;
-		virtual glm::vec3 GetCameraLookAt() const = 0;
 		virtual glm::vec3 GetCameraRotation() const = 0;
 		virtual glm::mat4 GetMVP() const = 0;
 		virtual glm::vec3 GetForwardVector() const = 0;
@@ -25,12 +24,11 @@ namespace Sweetie
 
 
 		virtual void SetCameraPosition(glm::vec3 position) = 0;
-		virtual void SetCameraLookAt(glm::vec3 position) = 0;
 		
 		virtual void AddRotationYaw(float angle) = 0;
 		virtual void AddRotationPitch(float angle) = 0;
 		virtual void AddRotationRoll(float angle) = 0;
 
-		static Camera* Create(glm::vec3 position, glm::vec3 initLookAtPos, float FOV);
+		static Camera* Create(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), float cameraImageWidth = 1920.f, float cameraImageHeight = 1080.f, float sensitivity = 0.05f, float FOV = 60.f);
 	};
 }

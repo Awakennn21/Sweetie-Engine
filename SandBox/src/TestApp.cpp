@@ -62,7 +62,7 @@ public:
 		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
 		S->Bind();
 
-		C.reset(Camera::Create(glm::vec3(30.0f, 0.0f, 30.0f), glm::vec3(0.0f, 0.0f, 0.0f), 60.f));
+		C.reset(Camera::Create(glm::vec3(30.0f, 0.0f, 30.0f)));
 		Renderer::EnableCulling();
 	}
 
@@ -90,21 +90,21 @@ public:
 	{
 		if (Input::IsMouseButtonPressed(SW_MOUSE_BUTTON_3))
 		{
-			if (e.GetMouseX() > LastMousePosX+5)
+			if (e.GetMouseX() > LastMousePosX)
 			{
 				C->AddRotationYaw(-RotationStep);
 			}
-			else if (e.GetMouseX() < LastMousePosX-5)
+			else if (e.GetMouseX() < LastMousePosX)
 			{
 				C->AddRotationYaw(RotationStep);
 			}
 
-			if (e.GetMouseY() > LastMousePosY+5 && degreesRotatedY < RotationLimitY)
+			if (e.GetMouseY() > LastMousePosY && degreesRotatedY < RotationLimitY)
 			{
 				C->AddRotationPitch(RotationStep);
 				degreesRotatedY += RotationStep;
 			}
-			else if (e.GetMouseY() < LastMousePosY-5 && degreesRotatedY > -RotationLimitY)
+			else if (e.GetMouseY() < LastMousePosY && degreesRotatedY > -RotationLimitY)
 			{
 				C->AddRotationPitch(-RotationStep);
 				degreesRotatedY -= RotationStep;
@@ -129,24 +129,20 @@ public:
 		if (e.GetKeyCode() == SW_KEY_D)
 		{
 			C->SetCameraPosition(C->GetCameraPosition() + -0.5f * C->GetLeftVector());
-			C->SetCameraLookAt(C->GetCameraLookAt() + -0.5f * C->GetLeftVector());
 		}
 		if (e.GetKeyCode() == SW_KEY_A)
 		{
 			C->SetCameraPosition(C->GetCameraPosition() + 0.5f * C->GetLeftVector());
-			C->SetCameraLookAt(C->GetCameraLookAt() + 0.5f * C->GetLeftVector());
 		}
 
 
 		if (e.GetKeyCode() == SW_KEY_W)
 		{
 			C->SetCameraPosition(C->GetCameraPosition() + 0.5f * C->GetForwardVector());
-			C->SetCameraLookAt(C->GetCameraLookAt() + 0.5f * C->GetForwardVector());
 		}
 		if (e.GetKeyCode() == SW_KEY_S)
 		{
 			C->SetCameraPosition(C->GetCameraPosition() + -0.5f * C->GetForwardVector());
-			C->SetCameraLookAt(C->GetCameraLookAt() + -0.5f * C->GetForwardVector());
 		}
 		return true;
 	}

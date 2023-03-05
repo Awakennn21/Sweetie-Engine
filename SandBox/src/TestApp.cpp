@@ -32,9 +32,6 @@ class RenderLayer : public Sweetie::Layer
 	float LastMousePosX;
 	float LastMousePosY;
 
-	int degreesRotatedX = 0;
-	int degreesRotatedY = 0;
-	const int RotationLimitY = 88;
 	const int RotationStep = 3;
 
 public:
@@ -62,7 +59,7 @@ public:
 		S.reset(Shader::Create("../Sweetie/res/Shaders/BasicShaders.shader"));
 		S->Bind();
 
-		C.reset(Camera::Create(glm::vec3(30.0f, 0.0f, 30.0f)));
+		C.reset(new Camera(glm::vec3(30.0f, 0.0f, 30.0f),1920,1080,0.3));
 		Renderer::EnableCulling();
 	}
 
@@ -99,17 +96,22 @@ public:
 				C->AddRotationYaw(RotationStep);
 			}
 
-			if (e.GetMouseY() > LastMousePosY && degreesRotatedY < RotationLimitY)
+			if (e.GetMouseY() > LastMousePosY )
 			{
-				C->AddRotationPitch(RotationStep);
-				degreesRotatedY += RotationStep;
+				if (C->GetCameraPitch() - RotationStep > -89.f)
+				{
+					C->AddRotationPitch(-RotationStep);
+				}
+				
 			}
-			else if (e.GetMouseY() < LastMousePosY && degreesRotatedY > -RotationLimitY)
+			else if (e.GetMouseY() < LastMousePosY)
 			{
-				C->AddRotationPitch(-RotationStep);
-				degreesRotatedY -= RotationStep;
+				if (C->GetCameraPitch() + RotationStep < 89.f)
+				{
+					C->AddRotationPitch(RotationStep);
+				}
 			}
-
+			SW_TRACE("{0}", C->GetCameraPitch());
 			LastMousePosX = e.GetMouseX();
 			LastMousePosY = e.GetMouseY();
 		}
@@ -128,11 +130,11 @@ public:
 	{
 		if (e.GetKeyCode() == SW_KEY_D)
 		{
-			C->SetCameraPosition(C->GetCameraPosition() + -0.5f * C->GetLeftVector());
+			C->SetCameraPosition(C->GetCameraPosition() + 0.5f * C->GetLeftVector());
 		}
 		if (e.GetKeyCode() == SW_KEY_A)
 		{
-			C->SetCameraPosition(C->GetCameraPosition() + 0.5f * C->GetLeftVector());
+			C->SetCameraPosition(C->GetCameraPosition() + -0.5f * C->GetLeftVector());
 		}
 
 

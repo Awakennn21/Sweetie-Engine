@@ -135,13 +135,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h" />
-    <ClInclude Include="src\Platform\OpenGl\OpenGlCamera.h" />
+    <ClInclude Include="src\Platform\Rendering\Camera.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
     <ClInclude Include="src\Platform\Rendering\Buffers.h" />
-    <ClInclude Include="src\Platform\Rendering\Camera.h" />
     <ClInclude Include="src\Platform\Rendering\GraphicsContext.h" />
     <ClInclude Include="src\Platform\Rendering\RenderCommand.h" />
     <ClInclude Include="src\Platform\Rendering\Renderer.h" />
@@ -583,13 +582,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp" />
-    <ClCompile Include="src\Platform\OpenGl\OpenGlCamera.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Camera.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
     <ClCompile Include="src\Platform\Rendering\Buffers.cpp" />
-    <ClCompile Include="src\Platform\Rendering\Camera.cpp" />
     <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp" />
     <ClCompile Include="src\Platform\Rendering\Renderer.cpp" />
     <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp" />

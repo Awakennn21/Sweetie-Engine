@@ -48,7 +48,7 @@
     <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h">
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGl\OpenGlCamera.h">
+    <ClInclude Include="src\Platform\Rendering\Camera.h">
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h">
@@ -64,9 +64,6 @@
       <Filter>src\Platform\OpenGl</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Rendering\Buffers.h">
-      <Filter>src\Platform\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Rendering\Camera.h">
       <Filter>src\Platform\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Rendering\GraphicsContext.h">
@@ -1388,7 +1385,7 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGl\OpenGlCamera.cpp">
+    <ClCompile Include="src\Platform\Rendering\Camera.cpp">
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp">
@@ -1404,9 +1401,6 @@
       <Filter>src\Platform\OpenGl</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Rendering\Buffers.cpp">
-      <Filter>src\Platform\Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\Rendering\Camera.cpp">
       <Filter>src\Platform\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp">

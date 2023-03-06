@@ -1380,6 +1380,12 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp">
       <Filter>vendor\GLM\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\Core.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Input.h" />
+    <ClInclude Include="src\Sweetie_c\Core\KeyCodes.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Layer.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Window.h" />
+    <ClInclude Include="src\Sweetie_c\Core\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">

@@ -1,5 +1,5 @@
 #pragma once
-
+#include <thread>
 #ifdef SW_PLATFORM_WINDOWS
 extern Sweetie::Application* Sweetie::CreateApplication();
 
@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 	SW_INFO("App Logger initlalized");
 
 	auto App  = Sweetie::CreateApplication();
-	App->Run();
+	std::thread RunningThread(App->Run());
 	delete App;
 }
 #endif

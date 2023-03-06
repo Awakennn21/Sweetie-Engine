@@ -55,7 +55,6 @@ namespace Sweetie
 	void Application::PushOverlay(Layer* overlay)
 	{
 		m_LayerStack.PushOverlay(overlay);
-
 	}
 
 	bool Application::OnWindowClosed(EventWindowClose& e)

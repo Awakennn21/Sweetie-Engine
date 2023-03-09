@@ -75,12 +75,6 @@
     <ClInclude Include="src\Sweetie_c\Events\WindowEvents.h">
       <Filter>src\Sweetie_c\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Sweetie_c\ImGui\ImGuiBuild.h">
-      <Filter>src\Sweetie_c\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Sweetie_c\ImGui\ImGuiLLayer.h">
-      <Filter>src\Sweetie_c\ImGui</Filter>
-    </ClInclude>
     <ClInclude Include="src\Sweetie_c\Input.h">
       <Filter>src\Sweetie_c</Filter>
     </ClInclude>
@@ -94,9 +88,6 @@
       <Filter>src\Sweetie_c</Filter>
     </ClInclude>
     <ClInclude Include="src\Sweetie_c\Log.h">
-      <Filter>src\Sweetie_c</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Sweetie_c\OpenGLRenderer.h">
       <Filter>src\Sweetie_c</Filter>
     </ClInclude>
     <ClInclude Include="src\Sweetie_c\Window.h">
@@ -1352,9 +1343,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\OpenGl\imgui_impl_glfw.cpp">
-      <Filter>src\Platform\OpenGl</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1364,16 +1352,10 @@
     <ClCompile Include="src\Sweetie_c\Application.cpp">
       <Filter>src\Sweetie_c</Filter>
     </ClCompile>
-    <ClCompile Include="src\Sweetie_c\ImGui\ImGuiLLayer.cpp">
-      <Filter>src\Sweetie_c\ImGui</Filter>
-    </ClCompile>
     <ClCompile Include="src\Sweetie_c\LayerStack.cpp">
       <Filter>src\Sweetie_c</Filter>
     </ClCompile>
     <ClCompile Include="src\Sweetie_c\Log.cpp">
-      <Filter>src\Sweetie_c</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Sweetie_c\OpenGLRenderer.cpp">
       <Filter>src\Sweetie_c</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp">

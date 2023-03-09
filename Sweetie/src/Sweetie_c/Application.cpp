@@ -9,12 +9,10 @@ namespace Sweetie
 
 	Sweetie::Application::Application()
 	{
-		SW_CORE_ASSERT(!s_AppInstance,"Application already exists")
-		m_Window = std::unique_ptr<Window>(Window::Create());
+		SW_CORE_ASSERT(!s_AppInstance, "Application already exists")
+			m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FUNCTION(Application::OnEvent));
 		s_AppInstance = this;
-		m_ImGuiLayer = new ImGuiLayer();
-		PushOverlay(m_ImGuiLayer);
 	}
 
 	Sweetie::Application::~Application()
@@ -46,28 +44,22 @@ namespace Sweetie
 			{
 				layer->OnUpdate();
 			}
-
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-			{
-				layer->OnImGuiRender();
-			}
-			m_ImGuiLayer->End();
-
 		}
 	}
+
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
 	}
+
 	void Application::PushOverlay(Layer* overlay)
 	{
 		m_LayerStack.PushOverlay(overlay);
-
 	}
+
 	bool Application::OnWindowClosed(EventWindowClose& e)
 	{
 		m_Running = false;
-		return true; 
+		return true;
 	}
 }

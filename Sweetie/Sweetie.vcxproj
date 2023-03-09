@@ -150,14 +150,11 @@
     <ClInclude Include="src\Sweetie_c\Events\KeyboardEvent.h" />
     <ClInclude Include="src\Sweetie_c\Events\MouseEvent.h" />
     <ClInclude Include="src\Sweetie_c\Events\WindowEvents.h" />
-    <ClInclude Include="src\Sweetie_c\ImGui\ImGuiBuild.h" />
-    <ClInclude Include="src\Sweetie_c\ImGui\ImGuiLLayer.h" />
     <ClInclude Include="src\Sweetie_c\Input.h" />
     <ClInclude Include="src\Sweetie_c\KeyCodes.h" />
     <ClInclude Include="src\Sweetie_c\Layer.h" />
     <ClInclude Include="src\Sweetie_c\LayerStack.h" />
     <ClInclude Include="src\Sweetie_c\Log.h" />
-    <ClInclude Include="src\Sweetie_c\OpenGLRenderer.h" />
     <ClInclude Include="src\Sweetie_c\Window.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="vendor\GLM\glm\common.hpp" />
@@ -577,14 +574,11 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\OpenGl\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Sweetie_c\Application.cpp" />
-    <ClCompile Include="src\Sweetie_c\ImGui\ImGuiLLayer.cpp" />
     <ClCompile Include="src\Sweetie_c\LayerStack.cpp" />
     <ClCompile Include="src\Sweetie_c\Log.cpp" />
-    <ClCompile Include="src\Sweetie_c\OpenGLRenderer.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

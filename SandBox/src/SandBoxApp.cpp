@@ -3,7 +3,6 @@
 
 class RenderLayer : public Sweetie::Layer
 {
-	Sweetie::OpenGLRenderer Renderer;
 	float tab[8] =
 		{
 			-0.1f,-0.5f,
@@ -13,8 +12,6 @@ class RenderLayer : public Sweetie::Layer
 		};
 	void OnUpdate()
 	{
-		Renderer.Clear();
-		Renderer.RenderShape(Sweetie::RendererShapes::RS_Rectangle, tab, 0.4f, 0.0f, 0.0f);
 	}
 	void OnEvent(Sweetie::Event& e)
 	{

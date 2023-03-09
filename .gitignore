@@ -4,6 +4,9 @@
 .vcxproj.user
 .vs/
 Sweetie/vendor/GLAD/GLAD.vcxproj.user
+Sweetie/Sweetie.vcxproj
+Sweetie/Sweetie.vcxproj.filters
+
 Sweetie/vendor/GLAD/bin-int/
 Sweetie/vendor/GLAD/bin/
 Sweetie/vendor/GLFW/bin-int/

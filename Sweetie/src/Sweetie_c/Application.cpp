@@ -36,7 +36,7 @@ namespace Sweetie
 	}
 
 	void Application::Run()
-	{
+	{	
 		while (m_Running)
 		{
 			m_Window->OnUpdate();

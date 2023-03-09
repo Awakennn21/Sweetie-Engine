@@ -76,8 +76,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;SW_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\ImGui;vendor\ImGui\backends;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;OPENGL_RENDERING_API;SW_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -96,8 +96,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;SW_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\ImGui;vendor\ImGui\backends;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;OPENGL_RENDERING_API;SW_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -120,31 +120,44 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;SW_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\ImGui;vendor\ImGui\backends;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <Optimization>Full</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <StringPooling>true</StringPooling>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SW_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_CUSTOM;SW_ENABLE_ASSERTS;OPENGL_RENDERING_API;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog-1.x\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h" />
+    <ClInclude Include="src\Platform\Rendering\Buffers.h" />
+    <ClInclude Include="src\Platform\Rendering\Camera.h" />
+    <ClInclude Include="src\Platform\Rendering\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\Rendering\RenderCommand.h" />
+    <ClInclude Include="src\Platform\Rendering\Renderer.h" />
+    <ClInclude Include="src\Platform\Rendering\RendererAPI.h" />
+    <ClInclude Include="src\Platform\Rendering\Shader.h" />
+    <ClInclude Include="src\Platform\Rendering\VertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Sweetie.h" />
     <ClInclude Include="src\Sweetie_c\Application.h" />
     <ClInclude Include="src\Sweetie_c\Core.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Core.h" />
+    <ClInclude Include="src\Sweetie_c\Core\EntryPoint.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Input.h" />
+    <ClInclude Include="src\Sweetie_c\Core\KeyCodes.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Layer.h" />
+    <ClInclude Include="src\Sweetie_c\Core\Window.h" />
     <ClInclude Include="src\Sweetie_c\EntryPoint.h" />
     <ClInclude Include="src\Sweetie_c\Events\Event.h" />
     <ClInclude Include="src\Sweetie_c\Events\KeyboardEvent.h" />
@@ -574,6 +587,18 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Buffers.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Camera.cpp" />
+    <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp" />
+    <ClCompile Include="src\Platform\Rendering\Shader.cpp" />
+    <ClCompile Include="src\Platform\Rendering\VertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Sweetie_c\Application.cpp" />
@@ -589,9 +614,6 @@
     </ProjectReference>
     <ProjectReference Include="vendor\GLAD\GLAD.vcxproj">
       <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
-    </ProjectReference>
-    <ProjectReference Include="vendor\ImGui\ImGui.vcxproj">
-      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

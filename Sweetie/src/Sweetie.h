@@ -7,6 +7,7 @@
 #include "Sweetie_c/KeyCodes.h"
 #include "Sweetie_c/Layer.h"
 #include "Sweetie_c/Log.h"
+#include "Platform/Rendering/Renderer.h"
 
 //Entry point for the application
 #include "Sweetie_c/EntryPoint.h"

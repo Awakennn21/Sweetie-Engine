@@ -10,17 +10,20 @@
     <Filter Include="src\Platform\OpenGl">
       <UniqueIdentifier>{55A49437-C105-7245-4A73-B8F7B6D3A804}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Platform\Rendering">
+      <UniqueIdentifier>{AE706E2F-9A6A-9781-83D7-2D926F70FDED}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Sweetie_c">
       <UniqueIdentifier>{94EC8A1B-00AD-0652-C9E7-4FCF35674B2E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Sweetie_c\Core">
+      <UniqueIdentifier>{6C0DF3BF-58F1-B315-C151-AE68AD549E97}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Sweetie_c\Events">
       <UniqueIdentifier>{F8290E8E-E4B8-9757-8DD7-AB527945A8FD}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Sweetie_c\ImGui">
-      <UniqueIdentifier>{BE80BFBE-2AE2-9CCC-B34F-E37E1FB0D38B}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -45,6 +48,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlBuffers.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlContext.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlRendererAPI.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlShader.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGl\OpenGlVertexArray.h">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\Buffers.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\Camera.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\GraphicsContext.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\RenderCommand.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\Renderer.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\RendererAPI.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\Shader.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Rendering\VertexArray.h">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -59,6 +101,24 @@
     </ClInclude>
     <ClInclude Include="src\Sweetie_c\Core.h">
       <Filter>src\Sweetie_c</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\Core.h">
+      <Filter>src\Sweetie_c\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\EntryPoint.h">
+      <Filter>src\Sweetie_c\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\Input.h">
+      <Filter>src\Sweetie_c\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\KeyCodes.h">
+      <Filter>src\Sweetie_c\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\Layer.h">
+      <Filter>src\Sweetie_c\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Core\Window.h">
+      <Filter>src\Sweetie_c\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Sweetie_c\EntryPoint.h">
       <Filter>src\Sweetie_c</Filter>
@@ -1343,6 +1403,42 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlContext.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlRendererAPI.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlShader.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGl\OpenGlVertexArray.cpp">
+      <Filter>src\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\Buffers.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\Camera.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\RenderCommand.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\Renderer.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\RendererAPI.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\Shader.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Rendering\VertexArray.cpp">
+      <Filter>src\Platform\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>

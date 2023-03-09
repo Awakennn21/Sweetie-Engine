@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Sweetie_c/Window.h"
+#include "Platform/Rendering/GraphicsContext.h"
 #include <GLFW/glfw3.h> 
 
 namespace Sweetie
@@ -9,6 +10,7 @@ namespace Sweetie
 	{
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 		struct WindowData
 		{
 			std::string Title;

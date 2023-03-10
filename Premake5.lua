@@ -98,8 +98,8 @@ project "Sandbox"
 
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/Examples/**.h",
+		"%{prj.name}/Examples/**.cpp"
 	}
 
 	includedirs

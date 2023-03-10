@@ -4,7 +4,7 @@
 
 
 using namespace Sweetie;
-class RenderLayer : public Sweetie::Layer
+class CameraLayer : public Sweetie::Layer
 {
 	float tab[30] =
 	{
@@ -35,7 +35,7 @@ class RenderLayer : public Sweetie::Layer
 	const int RotationStep = 3;
 
 public:
-	RenderLayer()
+	CameraLayer()
 	{
 		VAO.reset(VertexArray::Create());
 		VAO->Bind();
@@ -79,9 +79,9 @@ public:
 	void OnEvent(Sweetie::Event & e)
 	{
 		Sweetie::EventDispatcher d(e);
-		d.Dispatch<Sweetie::EventMouseMoved>(BIND_EVENT_FUNCTION(RenderLayer::OnMouseMoved));
-		d.Dispatch<Sweetie::EventMouseButtonPressed>(BIND_EVENT_FUNCTION(RenderLayer::OnMouseButtonPressed));
-		d.Dispatch<Sweetie::EventKeyPressed>(BIND_EVENT_FUNCTION(RenderLayer::OnKeyPressed));
+		d.Dispatch<Sweetie::EventMouseMoved>(BIND_EVENT_FUNCTION(CameraLayer::OnMouseMoved));
+		d.Dispatch<Sweetie::EventMouseButtonPressed>(BIND_EVENT_FUNCTION(CameraLayer::OnMouseButtonPressed));
+		d.Dispatch<Sweetie::EventKeyPressed>(BIND_EVENT_FUNCTION(CameraLayer::OnKeyPressed));
 	}
 	bool OnMouseMoved(Sweetie::EventMouseMoved& e)
 	{
@@ -111,7 +111,6 @@ public:
 					C->AddRotationPitch(RotationStep);
 				}
 			}
-			SW_TRACE("{0}", C->GetCameraPitch());
 			LastMousePosX = e.GetMouseX();
 			LastMousePosY = e.GetMouseY();
 		}
@@ -119,11 +118,6 @@ public:
 	}
 	bool OnMouseButtonPressed(Sweetie::EventMouseButtonPressed& e)
 	{
-		WindowsInput i;
-		if (e.GetButtonCode() == SW_MOUSE_BUTTON_LEFT)
-		{
-			SW_INFO("{0} , {1}", i.GetMouseX(), i.GetMouseY());
-		}
 		return true;
 	}
 	bool OnKeyPressed(Sweetie::EventKeyPressed& e)
@@ -150,18 +144,18 @@ public:
 	}
 };
 
-class  Test : public Sweetie::Application
+class  CameraApp : public Sweetie::Application
 {
 
 public:
-	Test()
+	CameraApp()
 		:Application()
 	{
-		PushLayer(new RenderLayer());
+		PushLayer(new CameraLayer());
 	}
 };
 
 Sweetie::Application* Sweetie::CreateApplication()
 {
-	return new Test;
+	return new CameraApp;
 }

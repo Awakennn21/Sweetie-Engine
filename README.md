@@ -21,7 +21,7 @@ git pull origin
 git fetch
 git submodule init
 git submodule update
-### Setp 2, run GenerateProjets.bat file inlcuded in this repository.
+### Setp 2, Run GenerateProjets.bat file inlcuded in this repository.
 ### Step 3, Open .sln file and Compile and run the project with Ctrl+F5
 
 # Usage

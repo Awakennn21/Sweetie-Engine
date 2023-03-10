@@ -16,11 +16,17 @@ The engine includes all the necessary elements for native rendering, such as buf
 ## To install the Sweetie Engine, you will need to clone the repository from GitHub:
 ### Step 1, Run those commands on your empty folder:
 git init
+
 git remote add origin https://github.com/Awakennn21/Sweetie-Engine.git
+
 git pull origin
+
 git fetch
+
 git submodule init
+
 git submodule update
+
 ### Setp 2, Run GenerateProjets.bat file inlcuded in this repository.
 ### Step 3, Open .sln file and Compile and run the project with Ctrl+F5
 

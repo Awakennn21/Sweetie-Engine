@@ -1,9 +1,12 @@
 #pragma once
 #include "Core.h"
+
 #include "Events/Event.h"
 #include "Events/WindowEvents.h"
 #include "Events/MouseEvent.h"
 #include "Events/KeyboardEvent.h"
+#include "EventHandler.h"
+
 #include "Sweetie_c/Window.h"
 #include "Sweetie_c/LayerStack.h"
 #include "Input.h"
@@ -16,7 +19,11 @@ namespace Sweetie
 		static Application* s_AppInstance;
 
 		std::unique_ptr<Window> m_Window;
-		LayerStack m_LayerStack;
+		std::shared_ptr<EventHandler> m_EventHandler;
+		std::shared_ptr<LayerStack> m_LayerStack;
+
+		std::thread m_EventHandlingThread;
+
 		bool m_Running;
 	public:
 

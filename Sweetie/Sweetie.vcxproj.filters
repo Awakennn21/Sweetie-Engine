@@ -1401,6 +1401,8 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp">
       <Filter>vendor\GLM\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Sweetie_c\Events\EventQueue.h" />
+    <ClInclude Include="src\Sweetie_c\EventHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGl\OpenGlBuffers.cpp">

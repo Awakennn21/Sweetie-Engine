@@ -160,6 +160,8 @@
     <ClInclude Include="src\Sweetie_c\Core\Window.h" />
     <ClInclude Include="src\Sweetie_c\EntryPoint.h" />
     <ClInclude Include="src\Sweetie_c\Events\Event.h" />
+    <ClInclude Include="src\Sweetie_c\EventHandler.h" />
+    <ClInclude Include="src\Sweetie_c\Events\EventQueue.h" />
     <ClInclude Include="src\Sweetie_c\Events\KeyboardEvent.h" />
     <ClInclude Include="src\Sweetie_c\Events\MouseEvent.h" />
     <ClInclude Include="src\Sweetie_c\Events\WindowEvents.h" />

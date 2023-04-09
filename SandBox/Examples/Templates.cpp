@@ -75,7 +75,6 @@ public:
 		Renderer::EndScene();
 	}
 
-
 	void OnEvent(Sweetie::Event & e)
 	{
 		Sweetie::EventDispatcher d(e);
@@ -83,6 +82,7 @@ public:
 		d.Dispatch<Sweetie::EventMouseButtonPressed>(BIND_EVENT_FUNCTION(CameraLayer::OnMouseButtonPressed));
 		d.Dispatch<Sweetie::EventKeyPressed>(BIND_EVENT_FUNCTION(CameraLayer::OnKeyPressed));
 	}
+
 	bool OnMouseMoved(Sweetie::EventMouseMoved& e)
 	{
 		if (Input::IsMouseButtonPressed(SW_MOUSE_BUTTON_3))
@@ -116,10 +116,12 @@ public:
 		}
 		return true;
 	}
+
 	bool OnMouseButtonPressed(Sweetie::EventMouseButtonPressed& e)
 	{
 		return true;
 	}
+
 	bool OnKeyPressed(Sweetie::EventKeyPressed& e)
 	{
 		if (e.GetKeyCode() == SW_KEY_D)
